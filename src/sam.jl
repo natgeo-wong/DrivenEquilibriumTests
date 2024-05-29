@@ -33,38 +33,6 @@ function wlsname(
 
 end
 
-function fluxtq0(scheme :: AbstractString)
-
-    if scheme == "P_FSF"
-        return [10.,90.]
-    elseif scheme == "T_FSF"
-        return [20.,120.]
-    else # for non fixed-surface fluxes, dummy vector of ones
-        return [1.,1.]
-    end
-
-end
-
-function fluxt0(
-    flux   :: Real,
-    scheme :: AbstractString
-)
-
-    fluxt,fluxq = fluxtq0(scheme)
-    return fluxt * (1 + flux / (fluxt+fluxq))
-
-end
-
-function fluxq0(
-    flux   :: Real,
-    scheme :: AbstractString
-)
-
-    fluxt,fluxq = fluxtq0(scheme)
-    return fluxq * (1 + flux / (fluxt+fluxq))
-
-end
-
 function outstatname(
     prjname :: AbstractString,
     schname :: AbstractString,
