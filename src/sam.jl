@@ -34,16 +34,14 @@ function wlsname(
 end
 
 function outstatname(
-    prjname :: AbstractString,
-    schname :: AbstractString,
-    radname :: AbstractString,
     expname :: AbstractString,
+    radname :: AbstractString,
     runname :: AbstractString,
 )
 
     fnc = datadir(
-        prjname,schname,radname,expname,"OUT_STAT",
-        "SAM_TroProVMo-$(prjname)-$(expname)-$runname.nc"
+        expname,radname,"OUT_STAT",
+        "SAM_DrivenEqulibriumTests-$(expname)-$runname.nc"
     )
 
     return fnc
@@ -51,14 +49,12 @@ function outstatname(
 end
 
 function retrievedims(
-    prjname :: AbstractString,
-    schname :: AbstractString,
-    radname :: AbstractString,
     expname :: AbstractString,
+    radname :: AbstractString,
     runname :: AbstractString,
 )
 
-    ds = NCDataset(outstatname(prjname,schname,radname,expname,runname))
+    ds = NCDataset(outstatname(expname,radname,runname))
     z = ds["z"][:]
     p = ds["p"][:]
     t = ds["time"][:]
@@ -82,14 +78,12 @@ end
 
 function retrieve2Dvar(
     varname :: AbstractString,
-    prjname :: AbstractString,
-    schname :: AbstractString,
-    radname :: AbstractString,
     expname :: AbstractString,
+    radname :: AbstractString,
     runname :: AbstractString,
 )
 
-    ds = NCDataset(outstatname(prjname,schname,radname,expname,runname))
+    ds = NCDataset(outstatname(expname,radname,runname))
     var = ds[varname][:]
     close(ds)
 
@@ -109,14 +103,12 @@ end
 
 function retrieve3Dvar(
     varname :: AbstractString,
-    prjname :: AbstractString,
-    schname :: AbstractString,
-    radname :: AbstractString,
     expname :: AbstractString,
+    radname :: AbstractString,
     runname :: AbstractString,
 )
 
-    ds = NCDataset(outstatname(prjname,schname,radname,expname,runname))
+    ds = NCDataset(outstatname(expname,radname,runname))
     var = ds[varname][:,:]
     close(ds)
 
