@@ -1,6 +1,6 @@
 &PARAMETERS
 
-caseid = 'DrivenEqulibriumTests-[expname]-[runname]',
+caseid = 'DrivenEquilibriumTests-[expname]-[runname]',
 
 dx = 2000.,
 dy = 2000.,
