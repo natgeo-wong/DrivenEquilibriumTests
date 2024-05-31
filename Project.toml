@@ -1,4 +1,4 @@
-name = "DrivenEqulibriumTests"
+name = "DrivenEquilibriumTests"
 authors = ["Nathanael Wong <natgeo.wong@outlook.com>"]
 
 [deps]

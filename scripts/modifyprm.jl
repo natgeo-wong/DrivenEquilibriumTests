@@ -1,5 +1,5 @@
 using DrWatson
-@quickactivate "TroProVMo"
+@quickactivate "DrivenEquilibriumTests"
 using Logging
 using Printf
 

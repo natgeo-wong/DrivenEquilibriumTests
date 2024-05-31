@@ -1,5 +1,5 @@
 using DrWatson
-@quickactivate "TroProVMo"
+@quickactivate "DrivenEquilibriumTests"
 using Printf
 
 include(srcdir("common.jl"))
